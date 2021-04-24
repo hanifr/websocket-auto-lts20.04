@@ -9,7 +9,7 @@ _CYAN=`tput setaf 6`
 _RESET=`tput sgr0`
 # printing greetings
 
-echo "${_MAGENTA}Installation Progress....setup for NGINX block :: started${_RESET}"
+echo "${_MAGENTA}Installation Progress....setup for Websocket protocol :: started${_RESET}"
 echo
 sleep 5
 
