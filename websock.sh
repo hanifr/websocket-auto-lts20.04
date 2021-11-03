@@ -50,6 +50,7 @@ cafile /etc/letsencrypt/live/$_domain/chain.pem
 keyfile /etc/letsencrypt/live/$_domain/privkey.pem
 EOL
 sudo mv /tmp/custom.conf /etc/mosquitto/conf.d/custom.conf
+sudo chmod 755 /etc/letsencrypt/live/
 chmod +x $HOME/websocket-auto-lts20.04/mosq_back.sh
 chmod +x $HOME/websocket-auto-lts20.04/certrenew.sh
 . mosq_back.sh
