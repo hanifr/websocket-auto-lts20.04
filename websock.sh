@@ -38,12 +38,12 @@ echo "[*] Creating mosquitto systemd service"
 cat >/tmp/custom.conf <<EOL
 allow_anonymous true
 #password_file /etc/mosquitto/passwd
-listener 1883 $_domain
+listener 1880 $_domain
 listener 8883
 certfile /etc/letsencrypt/live/$_domain/cert.pem
 cafile /etc/letsencrypt/live/$_domain/chain.pem
 keyfile /etc/letsencrypt/live/$_domain/privkey.pem
-listener 8083
+listener 8888
 protocol websockets
 certfile /etc/letsencrypt/live/$_domain/cert.pem
 cafile /etc/letsencrypt/live/$_domain/chain.pem
