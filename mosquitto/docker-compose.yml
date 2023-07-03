@@ -8,13 +8,13 @@ services:
       - 7887:1883
       - 9009:9001
     volumes: 
-      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
+      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./data:/mosquitto/data
+      - ./log:/mosquitto/log
     environment:
-      - VIRTUAL_HOST=mqtt.txio.live
-      - LETSENCRYPT_HOST=mqtt.txio.live
-      - LETSENCRYPT_EMAIL=tronexia@gmail.com
+      - VIRTUAL_HOST=xxx.xxx.xxx
+      - LETSENCRYPT_HOST=xxx.xxx.xxx
+      - LETSENCRYPT_EMAIL=xxx@gmail.com
 
 volumes:
   mosquitto_data:
