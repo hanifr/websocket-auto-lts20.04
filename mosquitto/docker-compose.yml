@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    restart: unless-stopped
+    ports:
+      - 7887:1883
+      - 9009:9001
+    volumes: 
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    environment:
+      - VIRTUAL_HOST=mqtt.txio.live
+      - LETSENCRYPT_HOST=mqtt.txio.live
+      - LETSENCRYPT_EMAIL=tronexia@gmail.com
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
+
+networks:
+  default:
+    external:
+      name: nginxproxy_default
