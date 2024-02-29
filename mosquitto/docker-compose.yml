@@ -1,21 +1,20 @@
-version: "3"
+version: "3.7"
 
 services:
   mosquitto:
-    image: eclipse-mosquitto:2
+    image: eclipse-mosquitto
     restart: unless-stopped
     ports:
-      - 7887:1883
-      - 9009:9001
+      - "1883:1883"
+      - "9009:9001"
     volumes: 
       - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - ./data:/mosquitto/data
-      - ./log:/mosquitto/log
+      - ./data:/mosquitto/data:rw
+      - ./log:/mosquitto/log:rw
     environment:
       - VIRTUAL_HOST=xxx.xxx.xxx
       - LETSENCRYPT_HOST=xxx.xxx.xxx
       - LETSENCRYPT_EMAIL=xxx@gmail.com
-
 volumes:
   mosquitto_data:
   mosquitto_log:
